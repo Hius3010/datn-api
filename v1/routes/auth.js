@@ -18,6 +18,10 @@ router.post(
         .notEmpty()
         .isLength({ min: 8 })
         .withMessage("Must be at least 8 chars long"),
+    check("role")
+        .not()
+        .isEmpty()
+        .withMessage("Default is subscriber"),
     Validate,
     Register
 );
